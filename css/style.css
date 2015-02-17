@@ -937,7 +937,7 @@
 	#banner
 	{
 		position: relative;
-		background: rgba(21, 28, 23, 0.95);
+		background: rgba(21, 28, 23, 0.7);
 		text-align: center;
 		z-index: 2;
 	}
