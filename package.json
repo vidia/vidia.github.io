@@ -1,0 +1,12 @@
+{
+  "name" : "PersonalWebsite", 
+  "version": "1.0.0",
+  "description" : "My pages", 
+  "dependencies": {
+    "harp": "*"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  }
+}
