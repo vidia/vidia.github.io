@@ -1,3 +1,0 @@
-#!/bin/sh
-echo "Pushishing..."
-GIT_WORK_TREE=/var/www/davidtschida.com/cameras git checkout -f

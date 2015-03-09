@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<!--
+	TXT 2.5 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>David Tschida</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:700" rel="stylesheet" />
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		
+			<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+			<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+			
+		<script src="js/config.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+		<!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
+		<script type="text/javascript">
+		var emailform = false;
+		
+		$(document).ready(function(){ 
+						
+			$(".fa-envelope").click(function(e) { 
+					e.preventDefault();
+					if (emailform) {
+						var options = { percent: 0 };	
+						$( ".email-form" ).hide( 'blind', options, 500);
+						emailform = false;
+					} else {
+						var options = { to: { width: 280, height: 185 } };
+						$( ".email-form" ).show( 'blind', options, 500);
+						emailform = true;
+					}
+				});
+			
+		});
+		</script>
+	</head>
+	<body class="homepage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo">
+					<div>
+						<h1><a href="#" id="logo">David</a></h1>
+						<span class="byline">Tschida</span>
+					</div>
+				</div>
+			</header>
+		<!-- /Header -->
+
+		<!-- Nav -->
+			<nav id="nav" class="skel-panels-fixed">
+				<ul>
+					<li class="current_page_item"><a href="index.html">Home</a></li>
+					<li><a href="wordpress">Blog</a></li>
+					<!-- <li><a href="right-sidebar.html">Right</a></li> -->
+					<!-- <li><a href="no-sidebar.html">No Sidebar</a></li> --> 
+				</ul>
+			</nav>
+		<!-- /Nav -->
+		
+		<!-- Banner -->
+			<div id="banner-wrapper">
+				<section id="banner">
+					<h2>My name is David Tschida</h2>
+					<span class="byline">I am studying Computer Science and love to mess around in code in my free time. HI KATIE!!!!</span>
+					<a href="#main-wrapper" class="button">Continue</a>
+				</section>
+			</div>
+		<!-- /Banner -->
+
+		<!-- Main -->
+			<div id="main-wrapper">
+				<div id="main" class="container">
+					<div class="row">
+						<div class="12u">
+							
+							<!-- Highlight -->
+								<section class="is-highlight">
+									<ul class="special">
+										<li><a href="#" class="fa fa-github-alt solo"><span>Battery</span></a></li>
+										<li><a href="#" class="fa fa-android solo"><span>Tablet</span></a></li>
+										<li><a href="#" class="fa fa-linux solo"><span>Flask</span></a></li>
+										<li><a href="#" class="fa fa-cog solo"><span>Pie Chart?</span></a></li>
+									</ul>
+									<header>
+										<h2>Check out some of my work</h2>
+										<span class="byline">Some code, some games, makes no difference</span>
+									</header>
+									<p>
+										I spend my time messing with whatever I can get my hands on. Sometimes that is YouTube, Minecraft or Reddit,<br />
+										but often it is tweaking my computer or writing code just for the fun of it. Here are some of my projects. <br />
+										Feel free to check me out on these sites.
+									</p>
+								</section>
+							<!-- /Highlight -->
+
+						</div>
+					</div>
+					<div class="row">
+						<div class="12u">
+
+							<!-- Features -->
+								<section class="is-features">
+									<h2 class="major"><span>Featured Pages</span></h2>
+									<div>
+										<div class="row">
+											<div class="3u">
+												
+												<!-- Feature -->
+													<section class="is-feature">
+														<a href="#" class="image image-full"><img src="images/pic01.jpg" alt="" /></a>
+														<h3><a href="#">SafeWalk</a></h3>
+														<p>
+															Recently I have been working with a team of fellow students to create <br />
+															an app (Android, iOS) to compliment Purdue's SafeWalk program. Check out<br />
+															what we have done so far!
+														</p>
+													</section>
+												<!-- /Feature -->
+										
+											</div>
+											<div class="3u">
+												
+												<!-- Feature -->
+													<section class="is-feature">
+														<a href="#" class="image image-full"><img src="images/pic02.jpg" alt="" /></a>
+														<h3><a href="#">Software Engineering</a></h3>
+														<p>
+															A bit of a major class project, myself and another team of fellow students <br /> 
+															will be creating todo list application that we are calling ______. It will <br /> 
+															be a way for users to safe all the fun things they want to do, <br />
+															for a time they can do them. The project is in its beginning stages, but click above for updates.
+														</p>
+													</section>
+												<!-- /Feature -->
+										
+											</div>
+											<div class="3u">
+												
+												<!-- Feature -->
+													<section class="is-feature">
+														<a href="#" class="image image-full"><img src="images/pic03.jpg" alt="" /></a>
+														<h3><a href="#">Dogecoin</a></h3>
+														<p>
+															The oddball of this section. Dogecoin is a newcomer to the cryptocurrencies, but is rising fast. <br />
+															I have recently started to mine DOGE and that is what got me started on this site. Click for more details.
+														</p>
+													</section>
+												<!-- /Feature -->
+										
+											</div>
+											<div class="3u">
+												
+												<!-- Feature -->
+													<section class="is-feature">
+														<a href="#" class="image image-full"><img src="images/pic04.jpg" alt="" /></a>
+														<h3><a href="http://getlamp.com">My Profile</a></h3>
+														<p>
+															Click here to see who it was what created ths little corner of the web.
+														</p>
+													</section>
+												<!-- /Feature -->
+										
+											</div>
+										</div>
+										<div class="row">
+											<div class="12u">
+											
+												<div class="actions">
+													<a href="#" class="button button-big">Contact Me</a>
+													<a href="#" class="button button-alt button-big">About This Section</a>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</section>
+							<!-- /Features -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- /Main -->
+
+		<!-- Footer -->
+			<footer id="footer" class="container">
+				<div class="row">
+					<div class="12u">
+
+						<!-- About -->
+							<section>
+								<h2 class="major"><span>Who am I?</span></h2>
+								<p>
+									As I said, my name is David Tschida and I am currently a Computer Science student. 
+								</p>
+							</section>
+						<!-- /About -->
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="12u">
+
+						<!-- Contact -->
+							<section>
+								<h2 class="major"><span>My online presence</span></h2>
+								<ul class="contact">
+									<li><a class="fa fa-facebook solo" href="http://facebook.com/David.Tschida"><span>Facebook</span></a></li>
+									<li><a class="fa fa-github-alt solo" href="http://github.com/vidia"><span>GitHub</span></a></li>
+									<li><a class="fa fa-linkedin solo" href="#"><span>LinkedIn</span></a></li>
+									<li><a class="fa fa-google-plus solo" href="#"><span>Google+</span></a></li>
+									<li><a class="fa fa-envelope solo" href="#"><span>Email</span></a></li>
+								</ul>
+								<div class="email-form">
+									<p> Hello this is some text that I am messing with </p>
+								</div>
+							</section>
+						<!-- /Contact -->
+					
+					</div>
+				</div>
+				<div class="row">
+					<div class="12u">
+
+						<!-- About -->
+							<section>
+								<h2 class="major"><span>Note from the designers</span></h2>
+								<p>
+									This is <a href="http://html5up.net/txt/">TXT</a>, a free site template designed by
+									<a href="http://n33.co">n33</a> for <a href="http://html5up.net/">HTML5 UP</a>.
+									It's built on the <a href="http://skeljs.org">skelJS</a> framework, uses well-thought out
+									HTML5 and CSS3, and is fully responsive making it a great starting point for your own
+									projects. And, like everything else we make, it's also free to use for pretty much any
+									personal or commercial work under the <a href="http://html5up.net/license/">Creative Commons Attribution</a>
+									license, so go ahead and use it &ndash; just don't forget to credit us!
+								</p>
+							</section>
+						<!-- /About -->
+
+					</div>
+				</div>
+
+
+				<!-- Copyright -->
+					<div id="copyright">
+						&copy; David Tschida | Images: <a href="http://fotogrph.com">fotogrph</a> | Design: <a href="http://html5up.net/">HTML5 UP</a>
+					</div>
+				<!-- /Copyright -->
+
+			</footer>
+		<!-- /Footer -->
+
+	</body>
+</html>
