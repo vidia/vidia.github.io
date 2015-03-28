@@ -3,77 +3,97 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PUPD</title>
+    <meta http-equiv="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+    <title>Lawson Cameras</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-50369942-1', 'davidtschida.com');
-	  ga('send', 'pageview');
-	</script>
+	 <script>
+	   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	   ga('create', 'UA-50369942-1', 'davidtschida.com');
+	   ga('send', 'pageview');
+	 </script>
+
+   <style>
+   .stream-title {
+     color: #fff;
+   }
+   </style>
   </head>
   <body style='background-color:black'>
-    
-    <div class="row" style='vertical-align:middle'>
-      <div class='large-2 columns' style='vertical-align:middle'>
-        <div class='panel' style='color:green'><b>P</b>urdue <b>U</b>niversity <b>P</b>olice <b>D</b>epartment</div>
+
+    <div class="container">
+      <div class="row" style='vertical-align:middle'>
+          <h1 class="text-center" style='color:#CC0000;'><b>Lawson Camera Streams</b></h1>
       </div>
-      <div class="large-8 columns">
-        <h1 style='color:#CC0000; padding-top:25px; text-align:center'><b>Security Access Center</b></h1>
-      </div>
-      <div class='large-2 columns' style='vertical-align:middle'>
-        <div class='callout panel' style='color:green; width:500px'>Login#: HACK3-41ACF-TGFSW-2124-PPDq1</div>
-      </div>
+      <hr>
+        <ul class="large-block-grid-4 medium-block-grid-2 small-block-grid-1" style='padding-left:15px; padding-right:15px;'>
+          <li>
+            <img id="stream" src="http://lwsnb148-cam.cs.purdue.edu/mjpg/video.mjpg">
+            <p class="stream-title text-center">LWSN B148</p>
+          </li>
+          <li>
+            <img id="stream" src="http://lwsnb146-cam.cs.purdue.edu/mjpg/video.mjpg">
+            <p class="stream-title text-center">LWSN B146</p>
+          </li>
+          <li>
+            <img id="stream" src="http://lwsnb131-cam.cs.purdue.edu/mjpg/video.mjpg">
+            <p class="stream-title text-center">LWSN B131</p>
+          </li>
+          <li>
+            <img id="stream" src="http://lwsnb158-cam.cs.purdue.edu/mjpg/video.mjpg">
+            <p class="stream-title text-center">LWSN B158</p>
+          </li>
+          <li>
+            <img id="stream" src="http://lwsnb160-cam.cs.purdue.edu/mjpg/video.mjpg">
+            <p class="stream-title text-center">LWSN B160</p>
+          </li>
+          <li>
+            <img id="stream" src="http://haas257-cam.cs.purdue.edu/mjpg/video.mjpg">
+            <p class="stream-title text-center">HAAS 257</p>
+          </li>
+          <li>
+            <img id="stream" src="http://haasg056-cam.cs.purdue.edu/mjpg/video.mjpg">
+            <p class="stream-title text-center">HAAS G056</p>
+          </li>
+          <li>
+            <img id="stream" src="http://haasg040-cam.cs.purdue.edu/mjpg/video.mjpg">
+            <p class="stream-title text-center">HAAS G040</p>
+          </li>
+          <li>
+            <img id="stream" src="http://lwsn1130n-cam.cs.purdue.edu/mjpg/1/video.mjpg">
+            <p class="stream-title text-center">LWSN COMMONS N</p>
+          </li>
+          <li>
+            <img id="stream" src="http://lwsn1130s-cam.cs.purdue.edu/mjpg/1/video.mjpg">
+            <p class="stream-title text-center">LWSN COMMONS S</p>
+          </li>
+          <li>
+            <img id="stream" src="http://128.210.129.12/mjpg/video.mjpg">
+            <p class="stream-title text-center">UNION</p>
+          </li>
+          <li>
+            <img id="stream" src="http://lwsn2h01-cam.cs.purdue.edu/mjpg/video.mjpg">
+            <p class="stream-title text-center">LWSN BACK ROOM</p>
+          </li>
+        </ul>
+      <hr>
     </div>
-
-    <div style='color:grey'>Authorized Personnel Only</div>
-    <div style='color:grey'>Building: LWSN | HAAS</div>
-    
-    
-    <hr>
-      <ul class="large-block-grid-4" style='padding-left:15px; padding-right:15px;'>
-        <li><img id="stream" src="http://lwsnb148-cam.cs.purdue.edu/mjpg/video.mjpg"></li>
-        <li><img id="stream" src="http://lwsnb146-cam.cs.purdue.edu/mjpg/video.mjpg"></li>
-        <li><img id="stream" src="http://lwsnb131-cam.cs.purdue.edu/mjpg/video.mjpg"></li>
-        <li><img id="stream" src="http://lwsnb158-cam.cs.purdue.edu/mjpg/video.mjpg"></li>
-        <li><img id="stream" src="http://lwsnb160-cam.cs.purdue.edu/mjpg/video.mjpg"></li>
-        <li><img id="stream" src="http://haas257-cam.cs.purdue.edu/mjpg/video.mjpg"></li>
-        <li><img id="stream" src="http://haasg056-cam.cs.purdue.edu/mjpg/video.mjpg"></li>
-        <li><img id="stream" src="http://haasg040-cam.cs.purdue.edu/mjpg/video.mjpg"></li>
-        <li><img id="stream" src="http://lwsn1130n-cam.cs.purdue.edu/mjpg/1/video.mjpg"></li>
-        <li><img id="stream" src="http://lwsn1130s-cam.cs.purdue.edu/mjpg/1/video.mjpg"></li>
-        <li><img id="stream" src="http://128.210.129.12/mjpg/video.mjpg"></li>
-        <li><img id="stream" src="http://lwsn2h01-cam.cs.purdue.edu/mjpg/video.mjpg"></li>
-      </ul>
-    <hr>
-
-   <div class="row">
-      <div class="large-12 columns" style='text-align:center'>
-        <label style='border-radius: 15px; font-size:50px; color:white' id='time'></label>
-      </div>
-    </div>
-    
-    <label style='font-size: 25px; color:white; display:none' id='counter'></label>   <!-- for debugging only -->
-
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script>
       $(document).foundation();
-      var seconds = 120;  
-      setTimeout(function(){
-        location.reload()
-      }, 120000);
-      setInterval(function(){
-          seconds--;
-          document.getElementById('counter').innerHTML = seconds;      
-          var date = new Date();
-          var text = date.toTimeString();
-          document.getElementById('time').innerHTML = "TIME: " + text;
-        }, 1000);
+
+      function notifyLoaded() {
+        console.log("b148 loaded.");
+      }
     </script>
   </body>
 </html>
