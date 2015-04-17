@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description" : "My pages", 
   "dependencies": {
-    "harp": "*"
+    "harp": "*", 
+    "newrelic": "*"
   },
   "engines": {
     "node": "0.10.x",
