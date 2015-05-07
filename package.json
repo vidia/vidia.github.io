@@ -5,7 +5,8 @@
   "dependencies": {
     "harp": "*",
     "newrelic": "*",
-    "vhost": "*"
+    "vhost": "*", 
+    "express": "*"
   },
   "engines": {
     "node": "0.10.x",
