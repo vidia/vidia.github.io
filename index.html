@@ -11,12 +11,9 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:700" rel="stylesheet" />
-
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-		
-			<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-			<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-									
+		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">							
 		<script src="js/config.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
@@ -28,29 +25,8 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
 		<!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
-	
-		<script type="text/javascript">
-			var emailform = false;				
-			$(document).ready(function(){ 
-															
-				$(".fa-envelope").click(function(e) { 
-					e.preventDefault();
-					if (emailform) {
-						var options = { percent: 0 };	
-						$( ".email-form" ).hide( 'blind', options, 1000);
-						emailform = false;
-					} else {
-						var options = { to: { width: 280, height: 185 } };
-						$( ".email-form" ).show( 'blind', options, 500);
-						emailform = true;
-					}
-				});												
-			});
-		</script>
 	</head>
 	<body class="homepage">
-
-
 		<!-- Nav -->
 			<nav id="nav" class="skel-panels-fixed">
 				<ul>
@@ -60,7 +36,6 @@
 				</ul>
 			</nav>
 		<!-- /Nav -->
-		
 		<!-- Banner -->
 			<div id="banner-wrapper">
 				<section id="banner">
@@ -70,29 +45,25 @@
 				</section>
 			</div>
 		<!-- /Banner -->
-
 		<!-- Main -->
 			<div id="main-wrapper">
 				<div id="main" class="container">
 					<div class="row">
 						<div class="12u">
-							
 							<!-- Highlight -->
 								<section class="is-highlight">
 									<ul class="special">
-										<li><a href="#" class="fa fa-github-alt solo"><span>Battery</span></a></li>
+										<li><a href="//github.com/vidia" class="fa fa-github-alt solo"><span>GitHub</span></a></li>
 										<li><a href="#" class="fa fa-android solo"><span>Tablet</span></a></li>
 										<li><a href="#" class="fa fa-linux solo"><span>Flask</span></a></li>
 										<li><a href="#" class="fa fa-cog solo"><span>Pie Chart?</span></a></li>
 									</ul>
 									<header>
 										<h2>Check out some of my work</h2>
-										<span class="byline">Some code, some games, makes no difference</span>
+										<span class="byline">Most of my work is for Android and a bit for NODE.</span>
 									</header>
 									<p>
-										I spend my time messing with whatever I can get my hands on. Sometimes that is YouTube, Minecraft or Reddit,<br />
-										but often it is tweaking my computer or writing code just for the fun of it. Here are some of my projects. <br />
-										Feel free to check me out on these sites.
+										I try to code as much as I can in my free time. Sometimes that is a lot, sometimes that isnt very much. But I always enjoy it. Most of my projects are on Github for now. Eventually I'll write up summaries and put them here. But for now go to my GitHub to see what I have done. 
 									</p>
 								</section>
 							<!-- /Highlight -->
@@ -106,6 +77,9 @@
 								<section class="is-features">
 									<h2 class="major"><span>Featured Projects</span></h2>
 									<div>
+
+										<p>These projects are a bit stale. I'll be updating this soon with more content.</p>
+
 										<div class="row">
 											<div class="3u">
 												
@@ -167,7 +141,6 @@
 												<!-- /Feature -->
 										
 											</div>
-
 												<!-- Add more columns here --> 	
 										</div>
 										<div class="row">
@@ -183,7 +156,6 @@
 									</div>
 								</section>
 							<!-- /Features -->
-
 						</div>
 					</div>
 				</div>
@@ -199,7 +171,7 @@
 							<section>
 								<h2 class="major"><span>Who am I?</span></h2>
 								<p>
-									As I said, my name is David Tschida and I am currently a Computer Science student. 
+									I am studying Computer Science at Purdue University, and spending my summer at Microsoft exploring the west coast! 
 								</p>
 							</section>
 						<!-- /About -->
@@ -217,26 +189,20 @@
 									<li><a class="fa fa-github-alt solo" href="http://github.com/vidia"><span>GitHub</span></a></li>
 									<li><a class="fa fa-linkedin solo" href="#"><span>LinkedIn</span></a></li>
 									<li><a class="fa fa-google-plus solo" href="#"><span>Google+</span></a></li>
-									<li><a class="fa fa-envelope solo"><span>Email</span></a></li>
+									<li><a class="fa fa-envelope solo" href="mailto:dmtschida1@gmail.com"><span>Email</span></a></li>
 								</ul>
-								<div class="email-form">
-									<p> Hello this is some text that I am messing with </p>
-								</div>
 							</section>
 						<!-- /Contact -->
 					
 					</div>
 				</div>
 				
-
 				<!-- Copyright -->
 					<div id="copyright">
-						&copy; David Tschida | Images: <a href="http://fotogrph.com">fotogrph</a> | Design: <a href="http://html5up.net/">HTML5 UP</a> | Hello <a href="http://davidtschida.com/anna.html">Anna!!!!</a>
+						&copy; David Tschida | Design: <a href="http://html5up.net/">HTML5 UP</a>
 					</div>
 				<!-- /Copyright -->
-
 			</footer>
 		<!-- /Footer -->
-
 	</body>
 </html>
