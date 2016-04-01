@@ -1,20 +1,19 @@
 require("newrelic");
 var express = require("express");
-var vhost = require('vhost');
 var harp = require("harp");
-
+var ua = require('universal-analytics');
 var main = express();
+
+var tracker = ua("UA-50369942-1", "server");
+
 main.use(express.static(__dirname + "/public"));
 main.use(harp.mount(__dirname + "/public"));
 
-var lawsoncs = express();
-lawsoncs.use(express.static(__dirname + "/public/cameras"));
-lawsoncs.use(harp.mount(__dirname + "/public/cameras"));
-
-
 var app = express();
-app.use(vhost('lawsoncs.webcam', lawsoncs)); // Serves all subdomains via Redirect app
-app.use(vhost('*.davidtschida.com', main));
-app.use(vhost('davidtschida.com', main));
+app.use(function(req, res, next) {
+    tracker.event("pagerequest", req.path, "server").send();
+    next();
+});
 
+app.use(main);
 app.listen(process.env.PORT || 5000);

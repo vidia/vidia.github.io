@@ -1,12 +1,13 @@
 {
-  "name" : "PersonalWebsite",
+  "name": "PersonalWebsite",
   "version": "1.0.0",
-  "description" : "My pages",
+  "description": "My pages",
   "dependencies": {
+    "express": "*",
     "harp": "*",
     "newrelic": "*",
-    "vhost": "*", 
-    "express": "*"
+    "universal-analytics": "^0.3.11",
+    "vhost": "*"
   },
   "engines": {
     "node": "0.10.x",
