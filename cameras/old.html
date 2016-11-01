@@ -17,11 +17,11 @@
 	</script>
   </head>
   <body style='background-color:black'>
-  
-  
+
+
     <div class="row" style='vertical-align:middle'>
       <p>All camera feeds are pulled from already public sources. "Security Access" banners are simply for fun.</p>
-    </div> 
+    </div>
     <div class="row" style='vertical-align:middle'>
       <div class='large-2 columns' style='vertical-align:middle'>
         <div class='panel' style='color:green'><b>P</b>urdue <b>U</b>niversity <b>C</b>ameras</div>
@@ -36,8 +36,8 @@
 
     <div style='color:grey'>Authorized Personnel Only</div>
     <div style='color:grey'>Building: LWSN | HAAS</div>
-    
-    
+
+
     <hr>
       <ul class="large-block-grid-4" style='padding-left:15px; padding-right:15px;'>
         <li><img id="stream" src="http://lwsnb148-cam.cs.purdue.edu/mjpg/video.mjpg"></li>
@@ -60,20 +60,20 @@
         <label style='border-radius: 15px; font-size:50px; color:white' id='time'></label>
       </div>
     </div>
-    
+
     <label style='font-size: 25px; color:white; display:none' id='counter'></label>   <!-- for debugging only -->
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script>
       $(document).foundation();
-      var seconds = 120;  
+      var seconds = 120;
       setTimeout(function(){
         location.reload()
       }, 120000);
       setInterval(function(){
           seconds--;
-          document.getElementById('counter').innerHTML = seconds;      
+          document.getElementById('counter').innerHTML = seconds;
           var date = new Date();
           var text = date.toTimeString();
           document.getElementById('time').innerHTML = "TIME: " + text;
