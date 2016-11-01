@@ -49,6 +49,8 @@
         }
       }
 
+      var startVisibleTime = new Date();
+
       var pageIsVisible = true;
 
       var hidden, visibilityChange;
@@ -71,9 +73,17 @@
       function handleVisibilityChange() {
         if (document[hidden]) {
           pageIsVisible = false;
+
+          //Send the time spent looking at the page to GA.
+          var startms = startVisibleTime.getTime();
+          var endms = new Date().getTime();
+          ga('send', 'timing', "cameras", "pageVisibleTime", endms - startms);
+
         } else {
           console.log("PAGE IS BACK!");
           pageIsVisible = true;
+
+          startVisibleTime = new Date();
 
           var elements = document.getElementsByClassName("stream");
           for(var i=0; i<elements.length; i++) {
@@ -85,7 +95,7 @@
       // Warn if the browser doesn't support addEventListener or the Page Visibility API
       if (typeof document.addEventListener === "undefined" ||
         typeof document[hidden] === "undefined") {
-        alert("This demo requires a browser, such as Google Chrome or Firefox, that supports the Page Visibility API.");
+        alert("This demo requires a browser, such as Google Chrome or Firefox, that supports the Page Visibility API. If you are seeing this alert, please use the old version. http://davidtschida.com/cameras/old.html");
       } else {
         // Handle page visibility change
         document.addEventListener(visibilityChange, handleVisibilityChange, false);
@@ -157,7 +167,7 @@
 
       <div class="row">
           <p class="text-center" style='color:#fff;'>I recently updated the page to make all the streams load, but framerate suffers a bit</p>
-          <p class="text-center" style='color:#fff;'>To access the old version of this page click <a href="/cameras/old.html">here</a></p>
+          <p class="text-center" style='color:#fff;'>To access the old version of this page click <a href="/cameras/old.html" onclick="ga('send', 'event', 'click', 'cameras', 'link_to_old');">here</a></p>
       </div>
     </div>
     <script src="js/vendor/jquery.js"></script>
