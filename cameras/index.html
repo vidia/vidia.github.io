@@ -10,7 +10,7 @@
     <meta property="og:title" content="Purdue Camera Streams" />
     <meta property="og:site_name" content="David Tschida" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="Compolation of publically available camera streams on Purdue University campus." />
+    <meta property="og:description" content="Compilation of publically available camera streams on Purdue University campus." />
     <meta property="og:url" content="http://davidtschida.com/cameras" />
     <meta property="og:image" content="http://lwsnb148-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi" />
 
@@ -102,6 +102,7 @@
       // Warn if the browser doesn't support addEventListener or the Page Visibility API
       if (typeof document.addEventListener === "undefined" ||
         typeof document[hidden] === "undefined") {
+        ga('send', 'event', 'error', 'cameras', 'old_browser');
         alert("This demo requires a browser, such as Google Chrome or Firefox, that supports the Page Visibility API. If you are seeing this alert, please use the old version. http://davidtschida.com/cameras/old.html");
       } else {
         // Handle page visibility change
