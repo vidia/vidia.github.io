@@ -31187,14 +31187,16 @@ var youTube = new YouTube();
 var async = require("async");
 var moment = require("moment"); 
 var $ = require('jquery');
-youTube.setKey('AIzaSyB1OOSpTREs85WUMvIgJvLTZKye4BVsoFU');
+youTube.setKey('AIzaSyAnrvFkDNknyr4DguOihW_6V8s9QgdeQxQ');
 var MAX_RESULTS = 50; 
-var SEARCH_TERM = null; 
+var SEARCH_TERM = null;
+//The max number of videos that can be pulled from the API is 500.  
 var DESIRED_VIDEOS = 100;
 
 var allVideoIds = [];
 var searchPageToken = null;
 var allVideosCollectedAndReadyCallback; 
+var onProgressUpdateCallback; 
 var timeToAbort = false;
 
 var numOfPages = 0; 
@@ -31202,8 +31204,9 @@ var numOfPages = 0;
 var publishedAfter = null
 var publishedBefore = null; 
 
-function beginCollecting(searchTerm, count, afterDate, beforeDate, onAllVideosCollectedAndReady) {
+function beginCollecting(searchTerm, count, afterDate, beforeDate, onAllVideosCollectedAndReady, onProgressUpdate) {
   allVideosCollectedAndReadyCallback = onAllVideosCollectedAndReady;
+  onProgressUpdateCallback = onProgressUpdate; 
   SEARCH_TERM = searchTerm;
   searchPageToken = null;
   DESIRED_VIDEOS = count;
@@ -31220,20 +31223,21 @@ function collectMoreVideos(doneCollectingVideos) {
   getRawVideoIdsForTerm(SEARCH_TERM, function doneGettingRawBatch(rawIds) {
     filterVideosForRequirements(rawIds, function doneFilteringIds(filteredIds) {
       allVideoIds = allVideoIds.concat(filteredIds);
+      onProgressUpdateCallback(null, filteredIds.length);
       doneCollectingVideos(null);
     })
   })
 }
 
 function filterVideosForRequirements(rawIds, onDonefilteringIds) {
-  if(!rawIds || rawIds.length <= 0) onDonefilteringIds(rawIds);
+  if(!rawIds || rawIds.length <= 0) return onDonefilteringIds(rawIds);
 
   var idsAsCommaSepString = rawIds.join();
   youTube.addParam("pageToken", null);
   youTube.addParam("publishedAfter", null);
   youTube.addParam("publishedBefore", null);
   youTube.getById(idsAsCommaSepString, function onGetVideos(error, result) {
-    if(error) throw error;
+    if(error) return onProgressUpdateCallback(error);
     async.filter(result.items, function filterFunction(videoData, callback) {
       //The filter for what videos in the search results to use.
       var isCorrectLength = moment.duration(videoData.contentDetails.duration).asSeconds() <= 
@@ -31251,8 +31255,8 @@ function filterVideosForRequirements(rawIds, onDonefilteringIds) {
 }
 
 function doneCollectingAllVideos(err, results) {
-  if(err) throw err;
-  allVideosCollectedAndReadyCallback(allVideoIds.slice(1, DESIRED_VIDEOS));
+  if(err) return onProgressUpdateCallback(err);
+  allVideosCollectedAndReadyCallback(allVideoIds.slice(1, DESIRED_VIDEOS + 1));
 }
 
 function getRawVideoIdsForTerm(searchTerm, onDoneGettingRaw) {
@@ -31264,7 +31268,7 @@ function getRawVideoIdsForTerm(searchTerm, onDoneGettingRaw) {
     youTube.addParam("publishedBefore", publishedBefore);
   youTube.search(searchTerm, MAX_RESULTS, function(error, result) {
     if (error) {
-      return console.log(error);
+      return onProgressUpdateCallback(error);
     }
     numOfPages++; 
 
@@ -31272,11 +31276,7 @@ function getRawVideoIdsForTerm(searchTerm, onDoneGettingRaw) {
     if(result.nextPageToken) {
       searchPageToken = result.nextPageToken;
     } else {
-      timeToAbort = true; 
-      //check if there are enough total videos for this term.
-      //if(result.pageInfo.totalResults < DESIRED_VIDEOS) {
-        //throw new Error("Not enough total videos")
-      //}
+      timeToAbort = true;
     }
     //end total count less than desired count handling.
     
@@ -31285,6 +31285,7 @@ function getRawVideoIdsForTerm(searchTerm, onDoneGettingRaw) {
     }
 
     return async.filter(result.items, function(item, callback) {
+      //Removes things like playlists that don't have a videoid. 
       callback(null, item.id.videoId); 
     }, function(err, videosWithIds) {
       async.map(videosWithIds, function(item, cb) {
@@ -31292,6 +31293,7 @@ function getRawVideoIdsForTerm(searchTerm, onDoneGettingRaw) {
           return cb(null, item.id.videoId); 
         }
       }, function(err, ids) {
+        if(err) return onProgressUpdateCallback(err);
         onDoneGettingRaw(ids); 
       });
     });
@@ -31305,28 +31307,43 @@ function getRawVideoIdsForTerm(searchTerm, onDoneGettingRaw) {
 //});
 
 $("document").ready(function () {
+  var numCompleted = 0; 
   $('#searcherform').submit(function (e) {
     e.preventDefault();
 
     var keywords = $("#searchterm").val(); 
     var after = $("#after").val(); 
     var before = $("#before").val(); 
+    var count = $("#count").val(); 
+
+    if(!keywords) {
+      return $("#status").text("You need to enter a keyword"); 
+    }
 
     $("#status").text("Searching for videos..."); 
     beginCollecting(keywords, 
-      500,
+      count ? count : 500,
       before ? moment(before).format("YYYY-MM-DDTHH:mm:ssZ") : null,
       after ? moment(after).format("YYYY-MM-DDTHH:mm:ssZ") : null, 
       function(results, message) {
+        //Prefix the results with the youtube URL.
         results = results.map(function(el) { 
           return 'https://www.youtube.com/watch?v=' + el; 
         });
-        $("#status").text("Done, found " + results.length + " videos that match the criteria"); 
+
+        $("#status").text("Done, found " + results.length + " total videos that match the criteria"); 
 
         if(message) {
           alert("Not all videos could be pulled for this term. Check the textbox for possible partial results.\n\n" + message); 
         }
         $("#resultarea").val(results.join("\n"))
+      }, function onProgress(err, deltaCompleted) {
+        if(err) {
+          $("#status").text("Unfortunately we encountered an error. Please try again.\nError information:\n" + JSON.stringify(err)); 
+        } else {
+          numCompleted += deltaCompleted;
+          $("#status").text("Completed " + numCompleted + " results. Please wait..."); 
+        }
       });
   });
 }); 
@@ -89410,10 +89427,7 @@ var YouTube = function() {
     else {
       self.clearParts();
 
-      self.addPart('snippet');
       self.addPart('contentDetails');
-      self.addPart('statistics');
-      self.addPart('status');
 
       self.addParam('part', self.getParts());
       self.addParam('id', id);
