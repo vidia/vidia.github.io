@@ -1,0 +1,12 @@
+[
+    { "name": "Home", "href": "/" },
+    { "name": "Resume", "href": "/resume.html" },
+    { "name": "Cameras", "href": "/cameras" },
+    { "name": "More", "href": "#", "children": [
+        { "name": "Youtube Searcher", "href": "/youtube-searcher" },
+        { "name": "External Links", "href": "#", "children": [
+            { "name": "Sigapp", "href": "http://sigapp.cs.purdue.edu" }
+        ]},
+        { "name": "SSH Pub Key", "href": "/id_rsa.pub" }
+    ] }
+]

@@ -1,15 +1,5 @@
 # davidtschida.com
 
-My personal website, currently hosted using Heroku. 
+My personal website. 
 
-
-
-Credits:
-
-	Icons
-		Font Awesome (http://fortawesome.github.com/Font-Awesome/)
-	
-	Other:
-		jQuery (jquery.com)
-		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
-		skelJS (skeljs.org)
+The design and format is adapted from html5up's TXT theme. All content is mine. 
