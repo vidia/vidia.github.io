@@ -1,0 +1,4 @@
+homepage:
+  build: .
+  expose:
+    - 80:4000
