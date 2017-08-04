@@ -6,6 +6,7 @@
         { "name": "Privacy Guide", "href": "/privacy" },
         { "name": "Youtube Searcher", "href": "/youtube-searcher" },
         { "name": "SSH Pub Key", "href": "/id_rsa.pub" },
+        { "name": "Board Game Inventory", "href": "https://boardgamegeek.com/collection/user/dmtschida" },
         { "name": "External Links", "href": "#", "children": [
             { "name": "Sigapp", "href": "http://sigapp.cs.purdue.edu" }, 
             { "name": "Privacy Tools", "href": "https://privacytoolsio.github.io/privacytools.io/" },
