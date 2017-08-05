@@ -1,0 +1,13 @@
+My cryptocurrency addresses.
+
+Bitcoin:
+1P66Lf9ZJcGwWgQ7NUqV77rrU1DEg1toMM
+
+Dogecoin: 
+DULAWtsZSbYB1RWiMLDF2VLMSKyFXYCDEf
+
+Ether (ETH): 
+0x70235962676e5D4A6e65f83E029424553BdBc49d
+
+LTC:
+LKEiGGaVwQbTz5bwr9xAPvFNEMjLaF41Qz
