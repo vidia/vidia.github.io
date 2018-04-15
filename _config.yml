@@ -28,7 +28,13 @@ github_username:  vidia
 markdown: kramdown
 theme: minima
 gems:
+  - jekyll
   - jekyll-feed
+#   - jekyll-github-metadata
+  - jekyll-mentions
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jemoji
 exclude:
   - Gemfile
   - Gemfile.lock
