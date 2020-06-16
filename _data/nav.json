@@ -1,16 +1,54 @@
 [
-    { "name": "Home", "href": "/" },
-    { "name": "Resume", "href": "/resume.html" },
-    { "name": "Cameras", "href": "/cameras" },
-    { "name": "More", "href": "#", "children": [
-        { "name": "Privacy Guide", "href": "/privacy" },
-        { "name": "Youtube Searcher", "href": "/youtube-searcher" },
-        { "name": "SSH Pub Key", "href": "/id_ed25519_master.pub" },
-        { "name": "Board Game Inventory", "href": "https://boardgamegeek.com/collection/user/dmtschida" },
-        { "name": "BTC/ETH/DOGE/LTC addresses", "href": "/crypto.txt" },
-        { "name": "External Links", "href": "#", "children": [
-            { "name": "Privacy Tools", "href": "https://privacytoolsio.github.io/privacytools.io/" },
-            { "name": "That One Privacy Site", "href": "https://thatoneprivacysite.net/" }
-        ]}
-    ]}
+  {
+    "name": "Home",
+    "href": "/"
+  },
+  {
+    "name": "Resume",
+    "href": "/resume.html"
+  },
+  {
+    "name": "Cameras",
+    "href": "/cameras"
+  },
+  {
+    "name": "More",
+    "href": "#",
+    "children": [
+      {
+        "name": "Privacy Guide",
+        "href": "/privacy"
+      },
+      {
+        "name": "Youtube Searcher",
+        "href": "/youtube-searcher"
+      },
+      {
+        "name": "SSH Pub Key",
+        "href": "/id_ed25519_master.pub"
+      },
+      {
+        "name": "Board Game Inventory",
+        "href": "https://boardgamegeek.com/collection/user/dmtschida"
+      },
+      {
+        "name": "BTC/ETH/DOGE/LTC addresses",
+        "href": "/crypto.txt"
+      },
+      {
+        "name": "External Links",
+        "href": "#",
+        "children": [
+          {
+            "name": "Privacy Tools",
+            "href": "https://privacytoolsio.github.io/privacytools.io/"
+          },
+          {
+            "name": "That One Privacy Site",
+            "href": "https://thatoneprivacysite.net/"
+          }
+        ]
+      }
+    ]
+  }
 ]

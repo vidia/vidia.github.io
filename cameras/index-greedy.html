@@ -4,50 +4,56 @@
 
 <!doctype html>
 <html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="no-cache">
-    <meta http-equiv="Expires" content="-1">
-    <meta http-equiv="Cache-Control" content="no-cache">
 
-    <meta property="og:title" content="Purdue Camera Streams" />
-    <meta property="og:site_name" content="David Tschida" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="Compilation of publically available camera streams on Purdue University campus." />
-    <meta property="og:url" content="{{site.url}}{{site.baseurl}}/cameras" />
-    <meta property="og:image" content="http://lwsnb148-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="no-cache">
+  <meta http-equiv="Expires" content="-1">
+  <meta http-equiv="Cache-Control" content="no-cache">
 
-    <title>Purdue Cameras</title>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <script src="js/vendor/modernizr.js"></script>
+  <meta property="og:title" content="Purdue Camera Streams" />
+  <meta property="og:site_name" content="David Tschida" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description"
+    content="Compilation of publically available camera streams on Purdue University campus." />
+  <meta property="og:url" content="{{site.url}}{{site.baseurl}}/cameras" />
+  <meta property="og:image" content="http://lwsnb148-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi" />
 
-    {% include analytics.html %}
+  <title>Purdue Cameras</title>
+  <link rel="stylesheet" href="css/foundation.css" />
+  <script src="js/vendor/modernizr.js"></script>
 
-   <style>
-   .stream-title {
-     color: #fff;
-   }
-   </style>
-  </head>
-  <body style='background-color:black'>
+  {% include analytics.html %}
 
-    <div class="container">
-      <div class="row" style='vertical-align:middle'>
-          <h1 class="text-center" style='color:#CC0000;'><b>Purdue Camera Streams</b></h1>
-          <p style='color:#CC0000;'>Note: These are publically available cameras with notices posted in the relevant rooms. This site simply provides a way to view them all at once.</p>
-	  <p style='color:#FFFFFF;'>To redude load on the cameras, this site will only load the most recent frame when the page is refreshed. If you have a need for the live streams, some are available <a href="https://www.cs.purdue.edu/resources/facilities/labs.html">here</a></p>
-      </div>
+  <style>
+    .stream-title {
+      color: #fff;
+    }
+  </style>
+</head>
 
-<script>
+<body style='background-color:black'>
+
+  <div class="container">
+    <div class="row" style='vertical-align:middle'>
+      <h1 class="text-center" style='color:#CC0000;'><b>Purdue Camera Streams</b></h1>
+      <p style='color:#CC0000;'>Note: These are publically available cameras with notices posted in the relevant rooms.
+        This site simply provides a way to view them all at once.</p>
+      <p style='color:#FFFFFF;'>To redude load on the cameras, this site will only load the most recent frame when the
+        page is refreshed. If you have a need for the live streams, some are available <a
+          href="https://www.cs.purdue.edu/resources/facilities/labs.html">here</a></p>
+    </div>
+
+    <script>
       function refresh(element) {
-        if(pageIsVisible) {
+        if (pageIsVisible) {
           var d = new Date();
           var img = new Image();
           img.addEventListener('load', this, false);
 
           // console.log("Refreshing: " + $(element).attr("src"))
-          img.src = $(element).attr("src").split("?")[0]+"?"+d.getTime();
+          img.src = $(element).attr("src").split("?")[0] + "?" + d.getTime();
 
           $(element).attr("src", img.src);
         }
@@ -90,8 +96,8 @@
           startVisibleTime = new Date();
 
           var elements = document.getElementsByClassName("stream");
-          for(var i=0; i<elements.length; i++) {
-              refresh(elements[i]);
+          for (var i = 0; i < elements.length; i++) {
+            refresh(elements[i]);
           }
         }
       }
@@ -105,69 +111,73 @@
         // Handle page visibility change
         document.addEventListener(visibilityChange, handleVisibilityChange, false);
       }
-      </script> 
-      <hr>
-        <ul class="large-block-grid-4 medium-block-grid-2 small-block-grid-1" style='padding-left:15px; padding-right:15px;'>
-           <li>
-            <img class="stream" onload="refresh(this)" src="http://lwsnb148-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
-            <p class="stream-title text-center">LWSN B148</p>
-          </li>
-          <li>
-            <img class="stream" onload="refresh(this)" src="http://lwsnb146-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
-            <p class="stream-title text-center">LWSN B146</p>
-          </li>
-          <li>
-            <img class="stream" onload="refresh(this)" src="http://lwsnb131-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
-            <p class="stream-title text-center">LWSN B131</p>
-          </li>
-          <li>
-            <img class="stream" onload="refresh(this)" src="http://lwsnb158-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
-            <p class="stream-title text-center">LWSN B158</p>
-          </li>
-          <li>
-            <img class="stream" onload="refresh(this)" src="http://lwsnb160-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
-            <p class="stream-title text-center">LWSN B160</p>
-          </li> 
-           <li>
-            <img class="stream" onload="refresh(this)" src="http://haas257-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
-            <p class="stream-title text-center">HAAS 257</p>
-          </li>
-          <li>
-            <img class="stream" onload="refresh(this)" src="http://haasg056-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
-            <p class="stream-title text-center">HAAS G056</p>
-          </li>
-          <li>
-            <img class="stream" onload="refresh(this)" src="http://haasg040-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
-            <p class="stream-title text-center">HAAS G040</p>
-          </li> -->
-          <li>
-            <img class="stream" onload="refresh(this)" src="http://lwsn1130n-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
-            <p class="stream-title text-center">LWSN COMMONS N(A)</p>
-          </li>
-          <li>
-            <img class="stream" onload="refresh(this)" src="http://lwsn1130s-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
-            <p class="stream-title text-center">LWSN COMMONS S</p>
-          </li>
-          <li>
-            <img class="stream" onload="refresh(this)" src="http://128.210.129.12/axis-cgi/jpg/image.cgi">
-            <p class="stream-title text-center">UNION</p>
-          </li>
-          <li>
-            <img class="stream" onload="refresh(this)" src="http://lwsn2h01-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
-            <p class="stream-title text-center">LWSN COMMONS N(B)</p>
-          </li>
-        </ul>
-      <hr>
-
-      <div class="row">
-          <p class="text-center" style='color:#fff;'>I recently updated the page to make all the streams load, but framerate suffers a bit</p>
-          <p class="text-center" style='color:#fff;'>To access the old version of this page click <a href="/cameras/old.html" onclick="ga('send', 'event', 'click', 'cameras', 'link_to_old');">here</a></p>
-      </div>
-    </div>
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script>
-      $(document).foundation();
     </script>
-  </body>
+    <hr>
+    <ul class="large-block-grid-4 medium-block-grid-2 small-block-grid-1"
+      style='padding-left:15px; padding-right:15px;'>
+      <li>
+        <img class="stream" onload="refresh(this)" src="http://lwsnb148-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
+        <p class="stream-title text-center">LWSN B148</p>
+      </li>
+      <li>
+        <img class="stream" onload="refresh(this)" src="http://lwsnb146-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
+        <p class="stream-title text-center">LWSN B146</p>
+      </li>
+      <li>
+        <img class="stream" onload="refresh(this)" src="http://lwsnb131-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
+        <p class="stream-title text-center">LWSN B131</p>
+      </li>
+      <li>
+        <img class="stream" onload="refresh(this)" src="http://lwsnb158-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
+        <p class="stream-title text-center">LWSN B158</p>
+      </li>
+      <li>
+        <img class="stream" onload="refresh(this)" src="http://lwsnb160-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
+        <p class="stream-title text-center">LWSN B160</p>
+      </li>
+      <li>
+        <img class="stream" onload="refresh(this)" src="http://haas257-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
+        <p class="stream-title text-center">HAAS 257</p>
+      </li>
+      <li>
+        <img class="stream" onload="refresh(this)" src="http://haasg056-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
+        <p class="stream-title text-center">HAAS G056</p>
+      </li>
+      <li>
+        <img class="stream" onload="refresh(this)" src="http://haasg040-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
+        <p class="stream-title text-center">HAAS G040</p>
+      </li> -->
+      <li>
+        <img class="stream" onload="refresh(this)" src="http://lwsn1130n-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
+        <p class="stream-title text-center">LWSN COMMONS N(A)</p>
+      </li>
+      <li>
+        <img class="stream" onload="refresh(this)" src="http://lwsn1130s-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
+        <p class="stream-title text-center">LWSN COMMONS S</p>
+      </li>
+      <li>
+        <img class="stream" onload="refresh(this)" src="http://128.210.129.12/axis-cgi/jpg/image.cgi">
+        <p class="stream-title text-center">UNION</p>
+      </li>
+      <li>
+        <img class="stream" onload="refresh(this)" src="http://lwsn2h01-cam.cs.purdue.edu/axis-cgi/jpg/image.cgi">
+        <p class="stream-title text-center">LWSN COMMONS N(B)</p>
+      </li>
+    </ul>
+    <hr>
+
+    <div class="row">
+      <p class="text-center" style='color:#fff;'>I recently updated the page to make all the streams load, but framerate
+        suffers a bit</p>
+      <p class="text-center" style='color:#fff;'>To access the old version of this page click <a
+          href="/cameras/old.html" onclick="ga('send', 'event', 'click', 'cameras', 'link_to_old');">here</a></p>
+    </div>
+  </div>
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+
 </html>
