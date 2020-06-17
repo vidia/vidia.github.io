@@ -16,20 +16,16 @@
     "href": "#",
     "children": [
       {
+        "name": "Downloads",
+        "href": "/downloads.html"
+      },
+      {
         "name": "Privacy Guide",
-        "href": "/privacy"
+        "href": "/privacy.html"
       },
       {
         "name": "Youtube Searcher",
         "href": "/youtube-searcher"
-      },
-      {
-        "name": "SSH Pub Key",
-        "href": "/id_ed25519_master.pub"
-      },
-      {
-        "name": "Board Game Inventory",
-        "href": "https://boardgamegeek.com/collection/user/dmtschida"
       },
       {
         "name": "BTC/ETH/DOGE/LTC addresses",
@@ -39,6 +35,10 @@
         "name": "External Links",
         "href": "#",
         "children": [
+          {
+            "name": "Board Game Inventory",
+            "href": "https://boardgamegeek.com/collection/user/dmtschida"
+          },
           {
             "name": "Privacy Tools",
             "href": "https://privacytoolsio.github.io/privacytools.io/"
