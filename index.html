@@ -1,67 +1,94 @@
----
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
----
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- Banner -->
-<div id="banner-wrapper">
-  <section id="banner">
-    <img class="image face-image" src="images/circle_face.png"></img>
-    <h2>David Tschida</h2>
-    <p>Working for Microsoft on Outlook for Windows</p>
+<head>
+  <meta charset="utf-8">
+  <title>David Tschida</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personal website of David Tschida">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Personal website of David Tschida</h1>
+    <img class="face" src="./images/circle_face.png" alt="an intentionally pixellated image of the author's face, with a white background and a circular crop" />
+    <p>
+      I works as a software engineer writing C++ code at Microsoft for Outlook for Windows, among other things.
+    </p>
+  </header>
+  <section>
+    <h2>Projects and things</h2>
+    <p>
+      Some of the things I'm working on, or have worked on before. In general, you can find some of my work over on <a
+        href="https://github.com/vidia">my Github</a>.
+    </p>
+    <h3>Pebble</h3>
+    <p>I can't guarantee these work anymore, but you can find two of my old Pebble watchfaces here: <a
+        href="./unix-time.pbw">Time CLI</a> and <a href="./xtern-pebble.pbw">Xtern Logo</a>.</p>
   </section>
-</div>
+  <section>
+    <h2>Keys and codes</h2>
+    <ul>
+      <li><a href="./david_ed25519_primary.pub">My ed25519 public key</a></li>
+      <li><a href="./david_rsa_primary.pub">My RSA public key</a></li>
+      <li><a href="./crypto.txt">Crypto Addresses</a></li>
+    </ul>
+  </section>
+  <section>
+    <h2>Resume</h2>
+    <p>
+      I am not currently looking for opportunities, but my resume is available here. (Though it is currently a bit out
+      of date.)
+    </p>
+    <a href="./resume.pdf">Resume (PDF)</a>
+  </section>
+  <section>
+    <h2>Links and things</h2>
+    <ul>
+      <li><a href="https://boardgamegeek.com/collection/user/dmtschida">Board Game Geek Collection</a></li>
+    </ul>
+  </section>
+  <section>
+    <article>
+      <h2>Privacy</h2>
+      <p>
+        I am no expert and this is far from comprehensive, but here are some resources that have been valuable to me.
+        First, here are some links that I like to use to find useful tools and privacy-respecting servies.
+      </p>
+      <ul>
+        <li><a href="https://privacytoolsio.github.io/privacytools.io/">PrivacyTools.io</a>: A great primer on privacy
+          with some utilities you can use.</li>
+        <li><a href="https://thatoneprivacysite.net/">That One Privacy Site</a>: Home of a great VPN comparison and
+          other privacy info. I shouldn't recommend any specific VPN for everyone, so this site is the best place to
+          start your own research.</li>
+        <li><a href="https://haveibeenpwned.com/">Have I Been Pwned?</a>: Learn if your email was included in any data
+          leaks so you can know which passwords need to be updated immediately.</li>
+        <li><a href="https://ssd.eff.org/en">EFF Surveiance Self Defense</a></li>
+        <li><a href="https://twit.tv/shows/security-now">Podcast: Security Now</a></li>
+      </ul>
+      <p>
+        If you are looking for immediate answers, I currently use and can recommend these browser extensions:
+      </p>
+      <ul>
+        <li><a href="https://github.com/gorhill/uBlock#installation">uBlock Origin</a>: A wide spectrum ad blocker</li>
+        <li><a href="https://www.eff.org/https-everywhere">HTTPS Everywhere</a>: Make sure you are using HTTPS whenever
+          it is available.</li>
+        <li><a href="https://www.eff.org/privacybadger">Privacy Badget</a>: Block online trackers.</li>
+      </ul>
+      <p>Beyond browser extensions, get a password manager. I won't recommend any specific one, but password managers
+        will help you make and keep track of unique, random passwords for every site you use.</p>
+    </article>
+  </section>
+  <section>
+    <h2>Other</h2>
+    <p>I don't have anywhere else link to these, so I'll drop them here</p>
+    <h3>Purdue Cameras Dashboard</h3>
+    <p>
+      Purdue University has multiple public IP cameras freely available online. <a href="./cameras">This</a> page has a
+      simple dashboard for viewing them all at the same time.
+    </p>
+  </section>
+</body>
 
-<!-- Main -->
-<div id="main-wrapper">
-  <div id="main" class="container">
-    <div class="row 200%">
-      <div class="12u">
-        <!-- Highlight -->
-        <section class="box highlight">
-          <header>
-            <h2>Software Engineer</h2>
-            <p>Clientside development with C++ and Java</p>
-          </header>
-          <p>
-            Started to code on TI-84, moved to Android, and now I write C++ for Windows.
-            Details for nearly every project I work on are on my <a href="https://github.com/vidia/">Github</a>
-          </p>
-        </section>
-      </div>
-    </div>
-    <div class="row 200%">
-      <div class="12u">
-        <section class="box features">
-          <h2 class="major"><span>What I'm up to</span></h2>
-          <div>
-            <div class="row">
-              <div class="3u 12u(mobile)">
-
-                <!-- Feature -->
-                <section class="box feature">
-                  <a href="https://microsoft.com" class="image featured"><img class="project-image"
-                      src="images/microsoft.png" alt="Microsoft Logo" /></a>
-                  <h3><a href="https://microsoft.com">Microsoft</a></h3>
-                  <p>
-                    Currently employed at Microsoft working on Outlook for Windows.
-                  </p>
-                </section>
-
-              </div>
-            </div>
-            <div class="row">
-              <div class="12u">
-                <ul class="actions">
-                  <li><a href="mailto:dmtschida1+websitelink@gmail.com" class="button big">Email Me</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-  </div>
-</div>
+</html>
