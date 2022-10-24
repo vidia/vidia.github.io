@@ -1,3 +1,3 @@
 # Personal Website
 
-My personal website, now simplified and fully static!
+Formerly a Github Pages site, now hosted at [davidtschida.com](https://davidtschida.com).
